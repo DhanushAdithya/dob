@@ -1,5 +1,7 @@
+@import '../assets/variable';
+
 html, body {
     margin: 0;
     padding: 0;
-    background-color: lightgreen;
+    background-color: $bg;
 }
