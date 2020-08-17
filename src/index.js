@@ -7,9 +7,9 @@ import * as serviceWorker from './serviceWorker'
 const root = document.getElementById('root')
 
 render(
-   <StrictMode>
+	<StrictMode>
 		<App />
-   </StrictMode>,
+	</StrictMode>,
 	root
 )
 
