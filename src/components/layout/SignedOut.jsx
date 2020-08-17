@@ -1,21 +1,16 @@
 import React from 'react'
-import { Button } from '@material-ui/core'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
 
-const StyledButton = styled(Button)`
-    margin: 0 0.6rem;
-`
+import { StyledNavLink, StyledNavButton } from '../../styles/styled'
 
 export default () => {
     return (
         <>
-            <NavLink to="/signup">
-                <StyledButton variant="outlined">Sign Up</StyledButton>
-            </NavLink>
-            <NavLink to="/signin">
-                <StyledButton variant="outlined">Sign In</StyledButton>
-            </NavLink>
+            <StyledNavLink to="/signup">
+                <StyledNavButton variant="outlined">Sign Up</StyledNavButton>
+            </StyledNavLink>
+            <StyledNavLink to="/signin">
+                <StyledNavButton variant="outlined">Sign In</StyledNavButton>
+            </StyledNavLink>
         </>
     )
 }
