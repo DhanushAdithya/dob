@@ -1,17 +1,18 @@
 import React from 'react'
-import { Typography, Paper, Box } from '@material-ui/core'
+import { Typography, Box } from '@material-ui/core'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 
 import {
 	StyledTextField,
 	StyledSubmit,
 	StyledFormContainer,
+	StyledFormPaper,
 } from '../../styles/styled'
 
 export default () => {
 	return (
 		<StyledFormContainer maxWidth='sm'>
-			<Paper component='form' style={{ margin: 0, padding: '10px' }}>
+			<StyledFormPaper component='form'>
 				<Typography variant='h4' align='center'>
 					Sign Up
 				</Typography>
@@ -34,7 +35,7 @@ export default () => {
 				<StyledSubmit type='submit' color='secondary' variant='outlined'>
 					Submit
 				</StyledSubmit>
-			</Paper>
+			</StyledFormPaper>
 		</StyledFormContainer>
 	)
 }
