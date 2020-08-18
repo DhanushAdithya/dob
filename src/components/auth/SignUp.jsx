@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Typography, Box } from '@material-ui/core'
-import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 
 import {
 	StyledTextField,
@@ -49,20 +48,9 @@ export default () => {
 								valid: e.target.value === pass.pass,
 							})
 						}}
+						error={pass.confirmPass.length > 0 && !pass.valid ? true : false}
+						helperText={pass.confirmPass.length > 0 && !pass.valid ? 'Passwords does not match' : ''}
 						fullWidth
-					/>
-					<CheckCircleIcon
-						color={
-							pass.valid && pass.confirmPass !== '' ? 'primary' : 'error'
-						}
-						fontSize='large'
-						style={{
-							margin: 'auto 0',
-							borderRadius: '30px',
-							backgroundColor: '#ddda',
-							padding: '5px',
-							transition: '0.3s',
-						}}
 					/>
 				</Box>
 				<StyledSubmit
