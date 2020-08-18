@@ -17,10 +17,10 @@ const StyledTextField = styled(TextField)`
 	text-align: center;
 `
 const StyledSubmit = styled(Button)`
-    margin: 15px 10px;
+	margin: 15px 10px;
 `
 const StyledFormContainer = styled(Container)`
-    margin-top: 100px;
+	margin-top: 100px;
 `
 
 export {
@@ -28,6 +28,6 @@ export {
 	StyledNavAvatar,
 	StyledNavLink,
 	StyledTextField,
-    StyledSubmit,
-    StyledFormContainer
+	StyledSubmit,
+	StyledFormContainer,
 }
