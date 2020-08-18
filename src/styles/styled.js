@@ -14,7 +14,7 @@ const StyledNavLink = styled(NavLink)`
 `
 const StyledFormPaper = styled(Paper)`
 	margin: 0;
-	padding: '15px';
+	padding: 15px;
 `
 const StyledTextField = styled(TextField)`
 	margin: 15px 0;
