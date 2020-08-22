@@ -15,4 +15,4 @@ render(
 	root
 )
 
-serviceWorker.register()
+serviceWorker.unregister()
