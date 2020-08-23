@@ -48,8 +48,14 @@ export default () => {
 								valid: e.target.value === pass.pass,
 							})
 						}}
-						error={pass.confirmPass.length > 0 && !pass.valid ? true : false}
-						helperText={pass.confirmPass.length > 0 && !pass.valid ? 'Passwords does not match' : ''}
+						error={
+							pass.confirmPass.length > 0 && !pass.valid ? true : false
+						}
+						helperText={
+							pass.confirmPass.length > 0 && !pass.valid
+								? 'Passwords does not match'
+								: ''
+						}
 						fullWidth
 					/>
 				</Box>
