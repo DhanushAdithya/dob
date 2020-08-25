@@ -20,7 +20,9 @@ const StyledFormPaper = styled(Paper)`
 const StyledTextField = styled(TextField)`
 	margin: 15px 0;
 `
-const StyledSubmit = styled(Button)`
+const StyledSubmit = styled(Button).attrs(_ => ({
+	type: 'submit',
+}))`
 	margin: 15px 0;
 `
 const StyledFormContainer = styled(Container)`
