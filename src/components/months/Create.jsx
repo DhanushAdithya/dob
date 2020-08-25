@@ -42,8 +42,8 @@ export default () => {
 					<Select
 						id='Month'
 						label='Month'
-                        onChange={e => setMonth(e.target.value)}
-                        value={month}
+						onChange={e => setMonth(e.target.value)}
+						value={month}
 					>
 						{MONTHS.map(i => {
 							return (
@@ -61,19 +61,15 @@ export default () => {
 					<Select
 						id='Date'
 						label='Date'
-                        onChange={e => setDate(e.target.value)}
-                        value={date}
+						onChange={e => setDate(e.target.value)}
+						value={date}
 					>
 						{Array.from(
 							{ length: MONTHS.filter(_ => _.month === month)[0].days },
 							(v, i) => i + 1
 						).map((i, _) => {
 							return (
-								<MenuItem
-									value={i}
-									key={`${month+_}`}
-									children={i}
-								/>
+								<MenuItem value={i} key={`${month + _}`} children={i} />
 							)
 						})}
 					</Select>
