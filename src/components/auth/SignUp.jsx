@@ -60,7 +60,6 @@ export default () => {
 					/>
 				</Box>
 				<StyledSubmit
-					type='submit'
 					color='secondary'
 					variant='outlined'
 					disabled={!pass.valid}

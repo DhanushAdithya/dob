@@ -17,7 +17,7 @@ export default () => {
 				</Typography>
 				<StyledTextField label='Email' fullWidth />
 				<StyledTextField label='Password' fullWidth />
-				<StyledSubmit type='submit' color='secondary' variant='outlined'>
+				<StyledSubmit color='secondary' variant='outlined'>
 					Login
 				</StyledSubmit>
 			</StyledFormPaper>
