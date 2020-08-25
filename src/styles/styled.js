@@ -1,4 +1,11 @@
-import { Button, Avatar, TextField, Container, Paper } from '@material-ui/core'
+import {
+	Button,
+	Avatar,
+	TextField,
+	Container,
+	Paper,
+	FormControl,
+} from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -28,6 +35,9 @@ const StyledSubmit = styled(Button).attrs(_ => ({
 const StyledFormContainer = styled(Container)`
 	margin-top: 100px;
 `
+const StyledSelect = styled(FormControl)`
+	margin: 15px 0;
+`
 
 export {
 	StyledNavButton,
@@ -37,4 +47,5 @@ export {
 	StyledSubmit,
 	StyledFormContainer,
 	StyledFormPaper,
+	StyledSelect,
 }

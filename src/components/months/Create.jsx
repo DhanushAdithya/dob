@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
-import {
-	Typography,
-	Select,
-	MenuItem,
-	InputLabel,
-	FormControl,
-} from '@material-ui/core'
+import { Typography, Select, MenuItem, InputLabel } from '@material-ui/core'
 
 import {
 	StyledSubmit,
 	StyledFormContainer,
 	StyledFormPaper,
+	StyledSelect,
 } from '../../styles/styled'
 
 export default () => {
@@ -37,7 +32,7 @@ export default () => {
 				<Typography variant='h4' align='center'>
 					Create
 				</Typography>
-				<FormControl fullWidth>
+				<StyledSelect fullWidth>
 					<InputLabel htmlFor='Month'>Month</InputLabel>
 					<Select
 						id='Month'
@@ -55,8 +50,8 @@ export default () => {
 							)
 						})}
 					</Select>
-				</FormControl>
-				<FormControl fullWidth>
+				</StyledSelect>
+				<StyledSelect fullWidth>
 					<InputLabel htmlFor='Date'>Date</InputLabel>
 					<Select
 						id='Date'
@@ -73,9 +68,9 @@ export default () => {
 							)
 						})}
 					</Select>
-				</FormControl>
+				</StyledSelect>
 				<StyledSubmit color='secondary' variant='outlined'>
-					Login
+					Add
 				</StyledSubmit>
 			</StyledFormPaper>
 		</StyledFormContainer>
