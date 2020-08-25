@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const StyledNavButton = styled(Button)`
 	margin: 0 0.6rem;
+	color: #323330;
 `
 const StyledNavAvatar = styled(Avatar)`
 	margin: 0 0 0 0.6rem;
