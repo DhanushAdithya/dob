@@ -1,4 +1,4 @@
-import January from './January'
+import Month from './Month'
 import Create from './Create'
 
-export { January, Create }
+export { Month, Create }
