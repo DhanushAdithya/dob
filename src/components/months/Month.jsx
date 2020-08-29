@@ -10,10 +10,10 @@ const StyledList = styled.li`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: ${({ prop }) => (prop ? prop : '#f8eda7')};
+	background-color: ${({ shade }) => (shade ? shade : '#f8eda7')};
 `
 
-const StyledUL = styled.li`
+const StyledUL = styled.ul`
 	display: grid;
 	grid-template-columns: repeat(7, 25px);
 	grid-template-rows: repeat(5, 25px);
@@ -29,10 +29,14 @@ const Month = ({ month }) => {
 	console.log(month)
 	return (
 		<StyledUL>
-			{month.dates.map(e => (
-				<Fragment key={`J${e}`}>
-					<Tooltip title={`${e} DOBs`} placement='top' arrow>
-						<StyledList prop={SHADES[+e]}></StyledList>
+			{month.dates.map((e, _) => (
+				<Fragment key={`J${_}`}>
+					<Tooltip
+						title={`${e === 0 ? 'No' : e} DOB${e !== 1 ? 's' : ''}`}
+						placement='top'
+						arrow
+					>
+						<StyledList shade={SHADES[+e]}></StyledList>
 					</Tooltip>
 				</Fragment>
 			))}
