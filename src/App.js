@@ -10,12 +10,21 @@ export default () => {
 		<Router>
 			<Navbar />
 			<Switch>
-				<Route path='/signin' component={() => <SignIn />} />
-				<Route path='/signup' component={() => <SignUp />} />
-				<Route path='/profile' component={() => <h1>Profile</h1>} />
-				<Route path='/jan' component={() => <Month />} />
-				<Route path='/' component={() => <Create />} />
-			</Switch>
+				<Route path='/signin' component={() => <SignIn />} />{' '}
+				<Route path='/signup' component={() => <SignUp />} />{' '}
+				<Route path='/profile' component={() => <h1> Profile </h1>} />
+				<Route
+					path='/jan'
+					component={() => (
+						<>
+							<Month />
+							<Month />
+							<Month />
+						</>
+					)}
+				/>{' '}
+				<Route path='/' component={() => <Create />} />{' '}
+			</Switch>{' '}
 		</Router>
 	)
 }
