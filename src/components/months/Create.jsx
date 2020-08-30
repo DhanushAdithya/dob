@@ -14,7 +14,7 @@ import {
 	StyledSelect,
 } from '../../styles/styled'
 import { Formtheme } from '../../styles/muiTheme'
-import { MONTHS } from '../../assets/months'
+import { MONTHS } from '../../assets'
 import { addDate } from '../../store/actions/addDate'
 import { connect } from 'react-redux'
 

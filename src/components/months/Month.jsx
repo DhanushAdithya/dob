@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Tooltip } from '@material-ui/core'
 import { connect } from 'react-redux'
 
-import { SHADES } from '../../assets/shades'
+import { SHADES } from '../../assets'
 
 const StyledList = styled.li`
 	border-radius: 3px;
