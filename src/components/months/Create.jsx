@@ -22,10 +22,10 @@ const Create = ({ addDate }) => {
 	const [month, setMonth] = useState('April')
 	const [date, setDate] = useState('1')
 
-    const addNewDate = e => {
-        e.preventDefault()
-        addDate({ month, date })
-    }
+	const addNewDate = e => {
+		e.preventDefault()
+		addDate({ month, date })
+	}
 
 	return (
 		<ThemeProvider theme={Formtheme}>
@@ -87,11 +87,10 @@ const Create = ({ addDate }) => {
 	)
 }
 
-const mapStateToProps = (state) => null
+const mapStateToProps = state => null
 
 const mapDispatchToProps = dispatch => ({
-    addDate: date => dispatch(addDate(date))
+	addDate: date => dispatch(addDate(date)),
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Create)
