@@ -15,15 +15,22 @@ import {
 } from '../../styles/styled'
 import { Formtheme } from '../../styles/muiTheme'
 import { MONTHS } from '../../assets/months'
+import { addDate } from '../../store/actions/addDate'
+import { connect } from 'react-redux'
 
-export default () => {
+const Create = ({ addDate }) => {
 	const [month, setMonth] = useState('April')
 	const [date, setDate] = useState('1')
+
+    const addNewDate = e => {
+        e.preventDefault()
+        addDate({ month, date })
+    }
 
 	return (
 		<ThemeProvider theme={Formtheme}>
 			<StyledFormContainer maxWidth='sm'>
-				<StyledFormPaper component='form' onSubmit={() => {}}>
+				<StyledFormPaper component='form' onSubmit={addNewDate}>
 					<Typography variant='h4' align='center'>
 						Create
 					</Typography>
@@ -79,3 +86,12 @@ export default () => {
 		</ThemeProvider>
 	)
 }
+
+const mapStateToProps = (state) => null
+
+const mapDispatchToProps = dispatch => ({
+    addDate: date => dispatch(addDate(date))
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Create)
