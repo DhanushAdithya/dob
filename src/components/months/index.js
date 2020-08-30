@@ -1,4 +1,5 @@
+import MonthContainer from './MonthContainer'
 import Month from './Month'
 import Create from './Create'
 
-export { Month, Create }
+export { MonthContainer, Month, Create }
