@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { Navbar } from './components/layout'
 import { SignUp, SignIn } from './components/auth'
-import { Create, Month, MonthContainer } from './components/months'
+import { Create, MonthContainer } from './components/months'
 
 export default () => {
 	return (
