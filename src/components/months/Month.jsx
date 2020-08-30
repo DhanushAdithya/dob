@@ -25,11 +25,10 @@ const StyledUL = styled.ul`
 	margin-left: 30px;
 `
 
-const Month = ({ month }) => {
-	console.log(month)
+export default ({ month }) => {
 	return (
 		<StyledUL>
-			{month.dates.map((e, _) => (
+			{month.map((e, _) => (
 				<Fragment key={`J${_}`}>
 					<Tooltip
 						title={`${e === 0 ? 'No' : e} DOB${e !== 1 ? 's' : ''}`}
@@ -43,11 +42,3 @@ const Month = ({ month }) => {
 		</StyledUL>
 	)
 }
-
-const mapStateToProps = state => ({
-	month: state.month,
-})
-
-const mapDispatchToProps = null
-
-export default connect(mapStateToProps, mapDispatchToProps)(Month)
