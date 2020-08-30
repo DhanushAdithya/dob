@@ -3,7 +3,8 @@ export const addDate = date => {
 		const firestore = getFirestore()
 		firestore.collection('months').add({
 			...date,
-		})
-		dispatch({ type: 'ADD_DATE', date })
+		}).then(() => {
+            dispatch({ type: 'ADD_DATE', date })
+        })
 	}
 }
