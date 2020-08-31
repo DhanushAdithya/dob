@@ -9,7 +9,11 @@ const MonthContainer = ({ months }) => {
 	return (
 		<>
 			{months &&
-				months.map(data => <Month key={data.id} month={data.dates} />)}
+				months
+					.sort((a, b) => a.index - b.index)
+					.map(data => (
+						<Month key={data.id} month={data.month} dates={data.dates} />
+					))}
 		</>
 	)
 }
