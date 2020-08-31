@@ -38,6 +38,24 @@ const StyledFormContainer = styled(Container)`
 const StyledSelect = styled(FormControl)`
 	margin: 15px 0;
 `
+const StyledList = styled.li`
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: ${({ shade }) => (shade ? shade : '#f8eda7')};
+`
+const StyledUL = styled.ul`
+	display: grid;
+	grid-template-columns: repeat(7, 25px);
+	grid-template-rows: repeat(5, 25px);
+	gap: 5px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+	margin-left: 30px;
+`
 
 export {
 	StyledNavButton,
@@ -48,4 +66,6 @@ export {
 	StyledFormContainer,
 	StyledFormPaper,
 	StyledSelect,
+	StyledList,
+	StyledUL,
 }
