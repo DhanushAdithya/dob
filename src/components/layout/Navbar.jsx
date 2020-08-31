@@ -1,6 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import { connect } from 'react-redux'
 
 import { StyledNavLink } from '../../styles/styled'
 import { SignedIn, SignedOut } from '../layout'
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-export default () => {
+const Navbar = ({ auth }) => {
 	const classes = useStyles()
 
 	return (
@@ -25,9 +26,14 @@ export default () => {
 				<StyledNavLink to='/' className={classes.logo}>
 					<Typography variant='h5'>Hello There</Typography>
 				</StyledNavLink>
-				<SignedOut />
-				<SignedIn />
+				{auth && auth ? <SignedIn /> :<SignedOut />}
 			</Toolbar>
 		</AppBar>
 	)
 }
+
+const mapStateToProps = (state) => ({
+    auth: state.firebase.auth.uid
+})
+
+export default connect(mapStateToProps, null)(Navbar)
