@@ -5,11 +5,13 @@ import {
 	StyledNavButton,
 	StyledNavAvatar,
 } from '../../styles/styled'
+import { signOut } from '../../store/actions/authUser'
+import { connect } from 'react-redux'
 
-export default () => {
+const SignedIn = ({ signOut }) => {
 	return (
 		<>
-			<StyledNavLink to='/'>
+			<StyledNavLink to='/' onClick={signOut}>
 				<StyledNavButton variant='outlined'>Logout</StyledNavButton>
 			</StyledNavLink>
 			<StyledNavLink to='/profile'>
@@ -18,3 +20,13 @@ export default () => {
 		</>
 	)
 }
+
+const mapStateToProps = state => {
+    console.log(state)
+}
+
+const mapDispatchToProps = dispatch => ({
+    signOut: () => dispatch(signOut())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignedIn)
