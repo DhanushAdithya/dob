@@ -4,13 +4,15 @@ import { Tooltip } from '@material-ui/core'
 import { StyledList, StyledUL } from '../../styles/styled'
 import { SHADES } from '../../assets'
 
-export default ({ month }) => {
+export default ({ month, dates }) => {
 	return (
 		<StyledUL>
-			{month.map((e, _) => (
+			{dates.map((e, _) => (
 				<Fragment key={`J${_}`}>
 					<Tooltip
-						title={`${e === 0 ? 'No' : e} DOB${e !== 1 ? 's' : ''}`}
+						title={`${e === 0 ? 'No' : e} DOB${e !== 1 ? 's' : ''} on ${
+							month.slice(0, 3) + ', ' + (+_ + 1)
+						}`}
 						placement='top'
 						arrow
 					>
