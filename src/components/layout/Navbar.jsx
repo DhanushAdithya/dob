@@ -26,14 +26,14 @@ const Navbar = ({ auth }) => {
 				<StyledNavLink to='/' className={classes.logo}>
 					<Typography variant='h5'>Hello There</Typography>
 				</StyledNavLink>
-				{auth && auth ? <SignedIn /> :<SignedOut />}
+				{auth && auth ? <SignedIn /> : <SignedOut />}
 			</Toolbar>
 		</AppBar>
 	)
 }
 
-const mapStateToProps = (state) => ({
-    auth: state.firebase.auth.uid
+const mapStateToProps = state => ({
+	auth: state.firebase.auth.uid,
 })
 
 export default connect(mapStateToProps, null)(Navbar)
