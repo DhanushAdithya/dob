@@ -4,17 +4,18 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 
 import { Month } from '../months'
+import { StyledMonthCont } from '../../styles/styled'
 
 const MonthContainer = ({ months }) => {
 	return (
-		<>
+		<StyledMonthCont>
 			{months &&
 				months
 					.sort((a, b) => a.index - b.index)
 					.map(data => (
 						<Month key={data.id} month={data.month} dates={data.dates} />
 					))}
-		</>
+		</StyledMonthCont>
 	)
 }
 
