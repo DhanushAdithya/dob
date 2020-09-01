@@ -14,7 +14,8 @@ export default () => {
 				<Route path='/signup' component={() => <SignUp />} />
 				<Route path='/profile' component={() => <h1> Profile </h1>} />
 				<Route path='/jan' component={() => <MonthContainer />} />
-				<Route path='/' component={() => <Create />} />
+				<Route path='/create' component={() => <Create />} />
+				<Route path='/' component={() => <h1 children='Home' />} />
 			</Switch>
 		</Router>
 	)
