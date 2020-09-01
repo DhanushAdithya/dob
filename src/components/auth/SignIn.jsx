@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Typography } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import {
 	StyledTextField,
@@ -11,11 +12,12 @@ import {
 } from '../../styles/styled'
 import { Formtheme } from '../../styles/muiTheme'
 import { signIn } from '../../store/actions/authUser'
-import { useState } from 'react'
 
-const SignIn = ({ signIn }) => {
+const SignIn = ({ signIn, redirect }) => {
 	const [user, setUser] = useState({ email: '', password: '' })
 	const updateUser = e => setUser({ ...user, [e.target.id]: e.target.value })
+
+	if (redirect) return <Redirect to='/' />
 
 	return (
 		<ThemeProvider theme={Formtheme}>
@@ -54,9 +56,9 @@ const SignIn = ({ signIn }) => {
 	)
 }
 
-const mapStateToProps = state => {
-    console.log(state)
-}
+const mapStateToProps = state => ({
+	redirect: state.auth.redirect,
+})
 
 const mapDispatchToProps = dispatch => ({
 	signIn: user => dispatch(signIn(user)),
