@@ -6,6 +6,7 @@ import {
 	InputLabel,
 	ThemeProvider,
 } from '@material-ui/core'
+import { connect } from 'react-redux'
 
 import {
 	StyledSubmit,
@@ -16,9 +17,9 @@ import {
 import { Formtheme } from '../../styles/muiTheme'
 import { MONTHS } from '../../assets'
 import { addDate } from '../../store/actions/addDate'
-import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
-const Create = ({ addDate }) => {
+const Create = ({ addDate, auth }) => {
 	const [month, setMonth] = useState('April')
 	const [date, setDate] = useState('1')
 
@@ -26,6 +27,8 @@ const Create = ({ addDate }) => {
 		e.preventDefault()
 		addDate({ month, date })
 	}
+
+	if (!auth) return <Redirect to='/signin' />
 
 	return (
 		<ThemeProvider theme={Formtheme}>
@@ -87,7 +90,9 @@ const Create = ({ addDate }) => {
 	)
 }
 
-const mapStateToProps = state => null
+const mapStateToProps = state => ({
+	auth: state.firebase.auth.uid,
+})
 
 const mapDispatchToProps = dispatch => ({
 	addDate: date => dispatch(addDate(date)),
