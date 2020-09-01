@@ -53,8 +53,35 @@ const StyledUL = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	margin-top: 30px;
-	margin-left: 30px;
+	margin-top: 20px;
+`
+const StyledMonthCont = styled.div`
+	margin: 0;
+	padding: 0;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+
+	@media (max-width: 1330px) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+
+	@media (max-width: 905px) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+	}
+
+	@media (max-width: 700px) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+	}
+
+	@media (max-width: 455px) {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(12, 1fr);
+	}
 `
 
 export {
@@ -68,4 +95,5 @@ export {
 	StyledSelect,
 	StyledList,
 	StyledUL,
+	StyledMonthCont,
 }
