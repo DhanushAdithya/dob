@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Typography, Box, ThemeProvider } from '@material-ui/core'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import {
 	StyledTextField,
@@ -8,23 +10,47 @@ import {
 	StyledFormPaper,
 } from '../../styles/styled'
 import { Formtheme } from '../../styles/muiTheme'
+import { signUp } from '../../store/actions/authUser'
 
-export default () => {
+const SignUp = ({ signUp, redirect }) => {
+	const [user, setUser] = useState({ name: '', email: '' })
 	const [pass, setPass] = useState({
 		pass: '',
 		confirmPass: '',
 		valid: false,
 	})
+	const updateUser = e => setUser({ ...user, [e.target.id]: e.target.value })
+
+	if (redirect) return <Redirect to='/' />
 
 	return (
 		<ThemeProvider theme={Formtheme}>
 			<StyledFormContainer maxWidth='sm'>
-				<StyledFormPaper component='form'>
+				<StyledFormPaper
+					component='form'
+					onSubmit={e => {
+						e.preventDefault()
+						signUp({ ...user, password: pass.pass })
+					}}
+				>
 					<Typography variant='h4' align='center'>
 						Sign Up
 					</Typography>
-					<StyledTextField label='Name' fullWidth />
-					<StyledTextField label='Email' type='email' fullWidth />
+					<StyledTextField
+						label='Name'
+						id='name'
+						onChange={updateUser}
+						value={user.name}
+						fullWidth
+					/>
+					<StyledTextField
+						label='Email'
+						id='email'
+						onChange={updateUser}
+						value={user.email}
+						type='email'
+						fullWidth
+					/>
 					<StyledTextField
 						label='Password'
 						type='password'
@@ -75,3 +101,13 @@ export default () => {
 		</ThemeProvider>
 	)
 }
+
+const mapStateToProps = state => ({
+	redirect: state.auth.redirect,
+})
+
+const mapDispatchToProps = dispatch => ({
+	signUp: user => dispatch(signUp(user)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
