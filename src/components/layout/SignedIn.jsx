@@ -11,6 +11,9 @@ import { connect } from 'react-redux'
 const SignedIn = ({ signOut }) => {
 	return (
 		<>
+			<StyledNavLink to='/create'>
+				<StyledNavButton variant='outlined'>Create</StyledNavButton>
+			</StyledNavLink>
 			<StyledNavLink to='/' onClick={signOut}>
 				<StyledNavButton variant='outlined'>Logout</StyledNavButton>
 			</StyledNavLink>
@@ -22,11 +25,11 @@ const SignedIn = ({ signOut }) => {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
+	console.log(state)
 }
 
 const mapDispatchToProps = dispatch => ({
-    signOut: () => dispatch(signOut())
+	signOut: () => dispatch(signOut()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignedIn)
