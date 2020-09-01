@@ -11,8 +11,7 @@ export const addDate = ({ month, date }) => {
 				return datesArray
 			})
 			.then(data => {
-				firestore.collection('months').doc(month).set({
-					month: month,
+				firestore.collection('months').doc(month).update({
 					dates: data,
 				})
 			})
