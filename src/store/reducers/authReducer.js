@@ -1,4 +1,4 @@
-const initialState = { redirect: false }
+const initialState = { redirect: false, err: '' }
 
 export default (state = initialState, action) => {
 	switch (action.type) {
@@ -11,6 +11,12 @@ export default (state = initialState, action) => {
 		case 'SIGN_OUT':
 			console.log('Succesfully signed out!')
 			return state
+		case 'SIGN_IN_ERROR':
+			return { ...state, err: action.err }
+		case 'SIGN_UP_ERROR':
+			return { ...state, err: action.err }
+		case 'SIGN_OUT_ERROR':
+			return { ...state, err: action.err }
 		default:
 			return state
 	}
