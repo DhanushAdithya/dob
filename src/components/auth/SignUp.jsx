@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Typography, Box, ThemeProvider } from '@material-ui/core'
+import { Typography, Box, ThemeProvider, Snackbar } from '@material-ui/core'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -99,6 +99,11 @@ const SignUp = ({ signUp, redirect, auth, err }) => {
 					</StyledSubmit>
 				</StyledFormPaper>
 			</StyledFormContainer>
+			<Snackbar
+				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+				open={err ? true : false}
+				message={err}
+			/>
 		</ThemeProvider>
 	)
 }
