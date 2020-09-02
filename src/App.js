@@ -13,7 +13,7 @@ export default () => {
 				<Route path='/signin' component={() => <SignIn />} />
 				<Route path='/signup' component={() => <SignUp />} />
 				<Route path='/profile' component={() => <h1> Profile </h1>} />
-				<Route path='/jan' component={() => <MonthContainer />} />
+				<Route path='/months' component={() => <MonthContainer />} />
 				<Route path='/create' component={() => <Create />} />
 				<Route path='/' component={() => <h1 children='Home' />} />
 			</Switch>
