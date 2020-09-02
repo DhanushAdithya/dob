@@ -4,15 +4,10 @@ import { Tooltip, Typography } from '@material-ui/core'
 import { StyledMonthWrapper, StyledList, StyledUL } from '../../styles/styled'
 import { SHADES } from '../../assets'
 
-
 export default ({ month, dates }) => {
 	return (
 		<StyledMonthWrapper>
-			<Typography
-				style={{ color: '#f0db4f' }}
-				variant='h5'
-				align='center'
-			>
+			<Typography style={{ color: '#f0db4f' }} variant='h5' align='center'>
 				{month}
 			</Typography>
 			<StyledUL>
