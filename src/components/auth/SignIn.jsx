@@ -13,11 +13,12 @@ import {
 import { Formtheme } from '../../styles/muiTheme'
 import { signIn } from '../../store/actions/authUser'
 
-const SignIn = ({ signIn, redirect }) => {
+const SignIn = ({ signIn, redirect, auth, err }) => {
 	const [user, setUser] = useState({ email: '', password: '' })
 	const updateUser = e => setUser({ ...user, [e.target.id]: e.target.value })
 
 	if (redirect) return <Redirect to='/' />
+	if (auth) return <Redirect to='/' />
 
 	return (
 		<ThemeProvider theme={Formtheme}>
@@ -58,6 +59,8 @@ const SignIn = ({ signIn, redirect }) => {
 
 const mapStateToProps = state => ({
 	redirect: state.auth.redirect,
+	err: state.auth.err,
+	auth: state.firebase.auth.uid,
 })
 
 const mapDispatchToProps = dispatch => ({
