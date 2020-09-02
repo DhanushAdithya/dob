@@ -25,7 +25,7 @@ export const signUp = ({ name, email, password }) => {
 						email,
 						initials: name
 							.split(' ')
-							.map(_ => _[0])
+							.map(_ => _[0].toUpperCase())
 							.join(''),
 					})
 			})
