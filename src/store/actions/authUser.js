@@ -5,6 +5,7 @@ export const signIn = ({ email, password }) => {
 			.auth()
 			.signInWithEmailAndPassword(email, password)
 			.then(() => dispatch({ type: 'SIGN_IN' }))
+			.catch(err => dispatch({ type: 'SIGN_IN_ERROR', err: err.message }))
 	}
 }
 
@@ -29,6 +30,7 @@ export const signUp = ({ name, email, password }) => {
 					})
 			})
 			.then(() => dispatch({ type: 'SIGN_UP' }))
+			.catch(err => dispatch({ type: 'SIGN_UP_ERROR', err: err.message }))
 	}
 }
 
@@ -39,5 +41,6 @@ export const signOut = () => {
 			.auth()
 			.signOut()
 			.then(() => dispatch({ type: 'SIGN_OUT' }))
+			.catch(err => dispatch({ type: 'SIGN_OUT_ERROR', err: err.message }))
 	}
 }
