@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-const Navbar = ({ auth }) => {
+const Navbar = ({ auth, user }) => {
 	const classes = useStyles()
 
 	return (
@@ -26,7 +26,7 @@ const Navbar = ({ auth }) => {
 				<StyledNavLink to='/' className={classes.logo}>
 					<Typography variant='h5'>Hello There</Typography>
 				</StyledNavLink>
-				{auth && auth ? <SignedIn /> : <SignedOut />}
+				{auth && auth ? <SignedIn profile={user} /> : <SignedOut />}
 			</Toolbar>
 		</AppBar>
 	)
@@ -34,6 +34,7 @@ const Navbar = ({ auth }) => {
 
 const mapStateToProps = state => ({
 	auth: state.firebase.auth.uid,
+	user: state.firebase.profile,
 })
 
 export default connect(mapStateToProps, null)(Navbar)
