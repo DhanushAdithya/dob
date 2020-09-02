@@ -12,7 +12,7 @@ import {
 import { Formtheme } from '../../styles/muiTheme'
 import { signUp } from '../../store/actions/authUser'
 
-const SignUp = ({ signUp, redirect }) => {
+const SignUp = ({ signUp, redirect, auth, err }) => {
 	const [user, setUser] = useState({ name: '', email: '' })
 	const [pass, setPass] = useState({
 		pass: '',
@@ -22,6 +22,7 @@ const SignUp = ({ signUp, redirect }) => {
 	const updateUser = e => setUser({ ...user, [e.target.id]: e.target.value })
 
 	if (redirect) return <Redirect to='/' />
+	if (auth) return <Redirect to='/' />
 
 	return (
 		<ThemeProvider theme={Formtheme}>
@@ -104,6 +105,8 @@ const SignUp = ({ signUp, redirect }) => {
 
 const mapStateToProps = state => ({
 	redirect: state.auth.redirect,
+	err: state.auth.err,
+	auth: state.firebase.auth.uid,
 })
 
 const mapDispatchToProps = dispatch => ({
