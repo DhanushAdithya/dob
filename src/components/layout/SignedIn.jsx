@@ -8,7 +8,7 @@ import {
 import { signOut } from '../../store/actions/authUser'
 import { connect } from 'react-redux'
 
-const SignedIn = ({ signOut }) => {
+const SignedIn = ({ signOut, err, profile }) => {
 	return (
 		<>
 			<StyledNavLink to='/create'>
@@ -18,15 +18,15 @@ const SignedIn = ({ signOut }) => {
 				<StyledNavButton variant='outlined'>Logout</StyledNavButton>
 			</StyledNavLink>
 			<StyledNavLink to='/profile'>
-				<StyledNavAvatar alt='profile'>DA</StyledNavAvatar>
+				<StyledNavAvatar alt='profile'>{profile.initials}</StyledNavAvatar>
 			</StyledNavLink>
 		</>
 	)
 }
 
-const mapStateToProps = state => {
-	console.log(state)
-}
+const mapStateToProps = state => ({
+	err: state.auth.err,
+})
 
 const mapDispatchToProps = dispatch => ({
 	signOut: () => dispatch(signOut()),
