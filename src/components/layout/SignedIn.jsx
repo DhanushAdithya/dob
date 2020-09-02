@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Snackbar } from '@material-ui/core'
 
 import {
 	StyledNavLink,
@@ -6,7 +8,6 @@ import {
 	StyledNavAvatar,
 } from '../../styles/styled'
 import { signOut } from '../../store/actions/authUser'
-import { connect } from 'react-redux'
 
 const SignedIn = ({ signOut, err, profile }) => {
 	return (
@@ -20,6 +21,11 @@ const SignedIn = ({ signOut, err, profile }) => {
 			<StyledNavLink to='/profile'>
 				<StyledNavAvatar alt='profile'>{profile.initials}</StyledNavAvatar>
 			</StyledNavLink>
+			<Snackbar
+				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+				open={err ? true : false}
+				message={err}
+			/>
 		</>
 	)
 }
