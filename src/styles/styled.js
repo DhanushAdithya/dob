@@ -20,7 +20,7 @@ const StyledNavAvatar = styled(Avatar)`
 const StyledNavLink = styled(NavLink)`
 	text-decoration: none;
 `
-const StyledFormPaper = styled(Paper)`
+const StyledPaper = styled(Paper)`
 	margin: 0;
 	padding: 15px;
 `
@@ -32,7 +32,7 @@ const StyledSubmit = styled(Button).attrs(_ => ({
 }))`
 	margin: 15px 0;
 `
-const StyledFormContainer = styled(Container)`
+const StyledContainer = styled(Container)`
 	margin-top: 100px;
 `
 const StyledSelect = styled(FormControl)`
@@ -101,8 +101,8 @@ export {
 	StyledNavLink,
 	StyledTextField,
 	StyledSubmit,
-	StyledFormContainer,
-	StyledFormPaper,
+	StyledContainer,
+	StyledPaper,
 	StyledSelect,
 	StyledList,
 	StyledUL,
