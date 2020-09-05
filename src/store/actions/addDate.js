@@ -1,4 +1,4 @@
-export const addDate = ({ month, date }) => {
+export const addDate = ({ month, date, user }) => {
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		const firestore = getFirestore()
 		firestore
@@ -14,6 +14,12 @@ export const addDate = ({ month, date }) => {
 				firestore.collection('months').doc(month).update({
 					dates: data,
 				})
+			})
+		firestore
+			.collection('users')
+			.doc(user.id)
+			.update({
+				isAdded: true,
 			})
 			.then(() => dispatch({ type: 'ADD_DATE', date }))
 	}
