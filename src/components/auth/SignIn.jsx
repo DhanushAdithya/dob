@@ -30,9 +30,7 @@ const SignIn = ({ signIn, redirect, auth, err }) => {
 						signIn(user)
 					}}
 				>
-					<Typography variant='h4' align='center'>
-						Sign In
-					</Typography>
+					<Typography variant='h4' align='center' children='Sign In' />
 					<StyledTextField
 						label='Email'
 						id='email'

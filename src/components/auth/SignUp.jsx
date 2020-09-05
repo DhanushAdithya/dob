@@ -34,9 +34,7 @@ const SignUp = ({ signUp, redirect, auth, err }) => {
 						signUp({ ...user, password: pass.pass })
 					}}
 				>
-					<Typography variant='h4' align='center'>
-						Sign Up
-					</Typography>
+					<Typography variant='h4' align='center' children='Sign Up' />
 					<StyledTextField
 						label='Name'
 						id='name'

@@ -34,9 +34,7 @@ const Create = ({ addDate, auth }) => {
 		<ThemeProvider theme={Formtheme}>
 			<StyledContainer maxWidth='sm'>
 				<StyledPaper component='form' onSubmit={addNewDate}>
-					<Typography variant='h4' align='center'>
-						Create
-					</Typography>
+					<Typography variant='h4' align='center' children='Create' />
 					<StyledSelect fullWidth>
 						<InputLabel htmlFor='Month'>Month</InputLabel>
 						<Select
