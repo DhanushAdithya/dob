@@ -6,8 +6,8 @@ import { Redirect } from 'react-router-dom'
 import {
 	StyledTextField,
 	StyledSubmit,
-	StyledFormContainer,
-	StyledFormPaper,
+	StyledContainer,
+	StyledPaper,
 } from '../../styles/styled'
 import { Formtheme } from '../../styles/muiTheme'
 import { signUp } from '../../store/actions/authUser'
@@ -26,8 +26,8 @@ const SignUp = ({ signUp, redirect, auth, err }) => {
 
 	return (
 		<ThemeProvider theme={Formtheme}>
-			<StyledFormContainer maxWidth='sm'>
-				<StyledFormPaper
+			<StyledContainer maxWidth='sm'>
+				<StyledPaper
 					component='form'
 					onSubmit={e => {
 						e.preventDefault()
@@ -97,8 +97,8 @@ const SignUp = ({ signUp, redirect, auth, err }) => {
 					>
 						Submit
 					</StyledSubmit>
-				</StyledFormPaper>
-			</StyledFormContainer>
+				</StyledPaper>
+			</StyledContainer>
 			<Snackbar
 				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
 				open={err ? true : false}

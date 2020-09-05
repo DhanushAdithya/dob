@@ -10,8 +10,8 @@ import { connect } from 'react-redux'
 
 import {
 	StyledSubmit,
-	StyledFormContainer,
-	StyledFormPaper,
+	StyledContainer,
+	StyledPaper,
 	StyledSelect,
 } from '../../styles/styled'
 import { Formtheme } from '../../styles/muiTheme'
@@ -32,8 +32,8 @@ const Create = ({ addDate, auth }) => {
 
 	return (
 		<ThemeProvider theme={Formtheme}>
-			<StyledFormContainer maxWidth='sm'>
-				<StyledFormPaper component='form' onSubmit={addNewDate}>
+			<StyledContainer maxWidth='sm'>
+				<StyledPaper component='form' onSubmit={addNewDate}>
 					<Typography variant='h4' align='center'>
 						Create
 					</Typography>
@@ -84,8 +84,8 @@ const Create = ({ addDate, auth }) => {
 					<StyledSubmit color='primary' variant='outlined'>
 						Add
 					</StyledSubmit>
-				</StyledFormPaper>
-			</StyledFormContainer>
+				</StyledPaper>
+			</StyledContainer>
 		</ThemeProvider>
 	)
 }
