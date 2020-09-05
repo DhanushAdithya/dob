@@ -19,13 +19,13 @@ import { MONTHS } from '../../assets'
 import { addDate } from '../../store/actions/addDate'
 import { Redirect } from 'react-router-dom'
 
-const Create = ({ addDate, auth }) => {
+const Create = ({ addDate, auth, user }) => {
 	const [month, setMonth] = useState('April')
 	const [date, setDate] = useState('1')
 
 	const addNewDate = e => {
 		e.preventDefault()
-		addDate({ month, date })
+		addDate({ month, date, user })
 	}
 
 	if (!auth) return <Redirect to='/signin' />
@@ -79,7 +79,11 @@ const Create = ({ addDate, auth }) => {
 							})}
 						</Select>
 					</StyledSelect>
-					<StyledSubmit color='primary' variant='outlined'>
+					<StyledSubmit
+						color='primary'
+						variant='outlined'
+						disabled={user.isAdded}
+					>
 						Add
 					</StyledSubmit>
 				</StyledPaper>
@@ -90,6 +94,7 @@ const Create = ({ addDate, auth }) => {
 
 const mapStateToProps = state => ({
 	auth: state.firebase.auth.uid,
+	user: state.firebase.profile,
 })
 
 const mapDispatchToProps = dispatch => ({
