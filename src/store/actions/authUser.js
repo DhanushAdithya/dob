@@ -27,6 +27,8 @@ export const signUp = ({ name, email, password }) => {
 							.split(' ')
 							.map(_ => _[0].toUpperCase())
 							.join(''),
+						id: user.uid,
+						isAdded: false,
 					})
 			})
 			.then(() => dispatch({ type: 'SIGN_UP' }))
