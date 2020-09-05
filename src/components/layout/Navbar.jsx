@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, Icon } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Icon, Hidden } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 
@@ -24,18 +24,30 @@ const Navbar = ({ auth, user }) => {
 		<AppBar className={classes.color} position='static'>
 			<Toolbar>
 				<StyledNavLink to='/' className={classes.logo}>
-					<Typography
-						variant='h5'
-						style={{ display: 'flex', alignItems: 'center' }}
-					>
-						<Icon
-							fontSize='large'
-							style={{ paddingRight: 2, marginBottom: 2 }}
+					<Hidden only={['xs']}>
+						<Typography
+							variant='h5'
+							style={{ display: 'flex', alignItems: 'center' }}
 						>
-							child_care
-						</Icon>
-						DOB
-					</Typography>
+							<Icon
+								fontSize='large'
+								style={{ paddingRight: 2, marginBottom: 2 }}
+							>
+								child_care
+							</Icon>
+							DOB
+						</Typography>
+					</Hidden>
+					<Hidden only={['xl', 'lg', 'md', 'sm']}>
+						<Typography style={{ display: 'flex', alignItems: 'center' }}>
+							<Icon
+								fontSize='large'
+								style={{ paddingRight: 2, marginBottom: 2 }}
+							>
+								child_care
+							</Icon>
+						</Typography>
+					</Hidden>
 				</StyledNavLink>
 				{auth && auth ? <SignedIn profile={user} /> : <SignedOut />}
 			</Toolbar>
