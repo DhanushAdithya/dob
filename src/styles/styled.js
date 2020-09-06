@@ -98,7 +98,7 @@ const StyledDetailCard = styled.div`
 	padding: 5px;
 	border: 1px solid grey;
 	border-radius: 5px;
-	margin: 5px 0;
+	margin: 10px 0;
 `
 
 export {
