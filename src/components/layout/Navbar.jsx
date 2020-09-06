@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import { StyledNavLink } from '../../styles/styled'
 import { SignedIn, SignedOut } from '../layout'
-import Sidebar from '../layout/Sidebar'
+import { Sidebar } from '../layout'
 
 const useStyles = makeStyles(theme => ({
 	color: {
@@ -25,7 +25,7 @@ const Navbar = ({ auth, user }) => {
 		<AppBar className={classes.color} position='static'>
 			<Toolbar>
 				<StyledNavLink to='/' className={classes.logo}>
-					<Hidden only={['xs']}>
+					<Hidden xsDown>
 						<Typography
 							variant='h5'
 							style={{ display: 'flex', alignItems: 'center' }}
@@ -39,7 +39,7 @@ const Navbar = ({ auth, user }) => {
 							DOB
 						</Typography>
 					</Hidden>
-					<Hidden only={['xl', 'lg', 'md', 'sm']}>
+					<Hidden smUp>
 						<Typography style={{ display: 'flex', alignItems: 'center' }}>
 							<Icon
 								fontSize='large'
@@ -50,8 +50,16 @@ const Navbar = ({ auth, user }) => {
 						</Typography>
 					</Hidden>
 				</StyledNavLink>
-                <Sidebar />
-				{auth && auth ? <SignedIn profile={user} /> : <SignedOut />}
+				<Sidebar />
+				{auth && auth ? (
+					<Hidden xsDown>
+						<SignedIn profile={user} />
+					</Hidden>
+				) : (
+					<Hidden xsDown>
+						<SignedOut />
+					</Hidden>
+				)}
 			</Toolbar>
 		</AppBar>
 	)
