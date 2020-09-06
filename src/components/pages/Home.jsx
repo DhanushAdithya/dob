@@ -1,12 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Typography } from '@material-ui/core'
+import styled from 'styled-components'
+
+const StyledHeading = styled(Typography)`
+	font-family: 'Luckiest Guy', cursive;
+`
 
 export default () => {
 	return (
 		<div>
-			<h1 children='Home' />
-			<p>Go to the month chart</p>
-			<Link to='/months' children='GO!!' />
+			<StyledHeading
+				variant='h2'
+				children='Welcome to DOB'
+				align='center'
+				style={{ color: '#f0db4f' }}
+			/>
+			<Typography
+				style={{ color: 'white' }}
+				children='Add your Date of Birth'
+				align='center'
+			/>
 		</div>
 	)
 }
