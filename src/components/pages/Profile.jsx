@@ -21,8 +21,8 @@ const Profile = ({ user }) => {
 						name='Can you add a date?'
 						value={
 							!user.isAdded
-								? 'Ofcourse you can!'
-								: 'It seems to be you already added a date, so no unfourtunately'
+								? 'Of course you can!'
+								: 'It seems to be you already added a date, so unfourtunately no :( '
 						}
 					/>
 				</StyledPaper>
