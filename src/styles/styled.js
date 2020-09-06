@@ -94,6 +94,12 @@ const StyledMonthWrapper = styled.div`
 	background-color: #41423e;
 	border: 1px solid white;
 `
+const StyledDetailCard = styled.div`
+	padding: 5px;
+	border: 1px solid grey;
+	border-radius: 5px;
+	margin: 5px 0;
+`
 
 export {
 	StyledNavButton,
@@ -108,4 +114,5 @@ export {
 	StyledUL,
 	StyledMonthCont,
 	StyledMonthWrapper,
+	StyledDetailCard,
 }
