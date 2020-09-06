@@ -13,7 +13,7 @@ import {
 	CardContent,
 	Typography,
 	Avatar,
-    Icon,
+	Icon,
 } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
@@ -21,8 +21,7 @@ const useStyles = makeStyles(theme => ({
 		width: 250,
 	},
 	menubutton: {
-		color: 'white',
-		margin: theme.spacing(0, 1, 0, -1.5),
+		color: '#323330',
 	},
 }))
 
@@ -59,7 +58,7 @@ export default function SwipeableTemporaryDrawer() {
 				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
 					<ListItem button key={text}>
 						<ListItemIcon>
-							{index % 2 === 0 ? "HI" : "Hello"}
+							{index % 2 === 0 ? 'HI' : 'Hello'}
 						</ListItemIcon>
 						<ListItemText primary={text} />
 					</ListItem>
@@ -70,7 +69,7 @@ export default function SwipeableTemporaryDrawer() {
 				{['All mail', 'Trash', 'Spam'].map((text, index) => (
 					<ListItem button key={text}>
 						<ListItemIcon>
-							{index % 2 === 0 ? "HI" : "Hello"}
+							{index % 2 === 0 ? 'HI' : 'Hello'}
 						</ListItemIcon>
 						<ListItemText primary={text} />
 					</ListItem>
@@ -81,15 +80,15 @@ export default function SwipeableTemporaryDrawer() {
 
 	return (
 		<div>
-			<Hidden mdUp>
+			<Hidden smUp>
 				<IconButton
 					className={classes.menubutton}
 					onClick={toggleDrawer(true)}
 				>
-                    <Icon style={{color: 'black'}}>menu</Icon>
+					<Icon>menu</Icon>
 				</IconButton>
 				<SwipeableDrawer
-					anchor='left'
+					anchor='right'
 					open={state}
 					onClose={toggleDrawer(false)}
 					onOpen={toggleDrawer(true)}
