@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import { StyledNavLink } from '../../styles/styled'
 import { SignedIn, SignedOut } from '../layout'
+import Sidebar from '../layout/Sidebar'
 
 const useStyles = makeStyles(theme => ({
 	color: {
@@ -49,6 +50,7 @@ const Navbar = ({ auth, user }) => {
 						</Typography>
 					</Hidden>
 				</StyledNavLink>
+                <Sidebar />
 				{auth && auth ? <SignedIn profile={user} /> : <SignedOut />}
 			</Toolbar>
 		</AppBar>
