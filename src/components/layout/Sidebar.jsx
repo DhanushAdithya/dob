@@ -55,7 +55,7 @@ export default function SwipeableTemporaryDrawer() {
 				</CardContent>
 			</Card>
 			<List>
-				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+				{['Sign In', 'Sign Up', 'Sign Out', 'Create'].map((text, index) => (
 					<ListItem button key={text}>
 						<ListItemIcon>
 							{index % 2 === 0 ? 'HI' : 'Hello'}
