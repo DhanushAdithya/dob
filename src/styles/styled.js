@@ -5,6 +5,7 @@ import {
 	Container,
 	Paper,
 	FormControl,
+	Typography,
 } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
@@ -101,6 +102,10 @@ const StyledDetailCard = styled.div`
 	margin: 10px 0;
 `
 
+const StyledHeading = styled(Typography)`
+	font-family: 'Luckiest Guy', cursive;
+`
+
 export {
 	StyledNavButton,
 	StyledNavAvatar,
@@ -115,4 +120,5 @@ export {
 	StyledMonthCont,
 	StyledMonthWrapper,
 	StyledDetailCard,
+	StyledHeading,
 }
