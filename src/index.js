@@ -35,5 +35,5 @@ store.firebaseAuthIsReady.then(() => {
 		</StrictMode>,
 		root
 	)
-	serviceWorker.unregister()
+	serviceWorker.register()
 })
