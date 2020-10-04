@@ -1,10 +1,7 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
-import styled from 'styled-components'
 
-const StyledHeading = styled(Typography)`
-	font-family: 'Luckiest Guy', cursive;
-`
+import { StyledHeading } from '../../styles/styled'
 
 export default () => {
 	return (
